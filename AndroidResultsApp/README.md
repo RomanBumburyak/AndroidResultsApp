@@ -7,3 +7,5 @@ Ex. 1-800-got-milk becomes 1-800-468-6455.
 Ex. 1-800-npm-runn becomes 1-800-676-7866.
 
 This app requires knowledge of C# and Xamarin forms.
+# AndroidAppInCeeSharp
+# AndroidAppTranslate
