@@ -2,4 +2,5 @@
 <resources>
     <string name="translationHistory">Translation History</string>
     <string name="app_name">Android Results </string>
+    <string name="buttonEmail">Send an Email</string>
 </resources>

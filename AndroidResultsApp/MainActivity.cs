@@ -9,7 +9,8 @@ namespace AndroidResultsApp
     [Activity(Label = "AndroidResultsApp", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-        static readonly List<string> phoneNumbers = new List<string>(); 
+        static readonly List<string> phoneNumbers = new List<string>();
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -22,6 +23,7 @@ namespace AndroidResultsApp
             TextView TranslatedPhoneWord = FindViewById<TextView>(Resource.Id.TranslatedPhoneWord);
             Button TranslateButton = FindViewById<Button>(Resource.Id.TranslateButton);
             Button TranslationHistoryButton = FindViewById<Button>(Resource.Id.TranslationHistoryButton);
+            Button ButtonToSendEmail = FindViewById<Button>(Resource.Id.ButtonToSendEmail); 
 
             string translatedNumber = string.Empty;
 
@@ -48,6 +50,26 @@ namespace AndroidResultsApp
                 StartActivity(intent);
 
             };
+
+            ButtonToSendEmail.Click += delegate
+            {
+                var email = new Intent(Android.Content.Intent.ActionSend);
+                email.PutExtra(Android.Content.Intent.ExtraEmail, new string[]{
+                    "romanbumburyak@gmail.com",
+                    "rb@gmail.com"
+                });
+
+                email.PutExtra(Android.Content.Intent.ExtraCc, new string[]{
+                    "romanbumburyak@yahoo.com"
+                });
+
+                email.PutExtra(Android.Content.Intent.ExtraSubject, "Hello Xam");
+                email.PutExtra(Android.Content.Intent.ExtraText, "Hey there this is XAM");
+                email.SetType("message/rfc822");
+                StartActivity(email);
+            };
+
+                               
 
         }
     }
