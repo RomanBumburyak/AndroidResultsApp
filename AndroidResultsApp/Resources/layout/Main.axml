@@ -22,4 +22,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/TranslatedPhoneWord" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TranslationHistoryButton"
+        android:text="@string/translationHistory"
+        android:enabled="false" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
 </LinearLayout>
